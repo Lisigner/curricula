@@ -2,7 +2,13 @@
   <div id="main-app" class="container">
     <div class="row justify-content-center">
       <add-appointment @add="addItem"/>
-       <search-appointments @searchRecords="searchAppointments"/>
+       <search-appointments
+        @searchRecords="searchAppointments"
+        :myKey="filterKey"
+        :myDir="filterDir"
+        @requestKey="changeKey"
+        @requestDir="changeDir"
+      />
       <appointment-list :appointments="filteredApts" @remove="removeItem" @edit="editItem"/>
     </div>
   </div>
@@ -62,6 +68,12 @@ export default {
     }
   },
   methods: {
+    changeKey: function(value) {
+      this.filterKey = value;
+    },
+    changeDir: function(value) {
+      this.filterDir = value;
+    },
     searchAppointments: function(terms) {
       this.searchTerms = terms;
     },
