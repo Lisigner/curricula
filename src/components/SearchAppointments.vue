@@ -50,7 +50,7 @@
             @click="$emit('requestKey', 'petOwner')"
           >
             Owner
-            <font-awesome-icon icon="check" v-if="myDir==='asc'"/>>
+            <font-awesome-icon icon="check" v-if="myDir==='asc'"/>
           </a>
 
           <div class="dropdown-divider" role="separator"></div>

@@ -1,5 +1,7 @@
 <template>
   <div id="main-app" class="container">
+    <Navigation />
+    <router-view class="container" />
     <div class="row justify-content-center">
       <add-appointment @add="addItem"/>
        <search-appointments
@@ -15,6 +17,7 @@
 </template>
 
 <script>
+import Navigation from "./components/Navigation.vue";
 import AddAppointment from "./components/AddAppointment";
 import SearchAppointments from "./components/SearchAppointments";
 import AppointmentList from "./components/AppointmentList";
@@ -33,6 +36,7 @@ export default {
     };
   },
   components: {
+    Navigation,
     AppointmentList,
     SearchAppointments,
     AddAppointment
@@ -94,3 +98,8 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+$primary: #05b2dd;
+@import "node_modules/bootstrap/scss/bootstrap";
+</style>
