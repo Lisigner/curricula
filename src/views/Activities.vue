@@ -2,7 +2,7 @@
 <div class="mt-3">
     <div class="row justify-content-center">
         <div class="text-secondary text-center">
-    Welcome back 
+    Welcome 
     <span class="font-weight-bold text-info">{{user}}</span>
     </div>
       <add-appointment @add="addItem"/>
