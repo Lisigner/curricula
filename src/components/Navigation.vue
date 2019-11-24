@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <router-link class="navbar-brand" to="/">Curricula</router-link>
         <div class="navbar-nav ml-auto">
-          <router-link class="nav-item nav-link" to="/meetings">activities</router-link>
+          <router-link class="nav-item nav-link" to="/activities">activities</router-link>
           <router-link class="nav-item nav-link" to="/login">log in</router-link>
           <router-link class="nav-item nav-link" to="/register">register</router-link>
         </div>

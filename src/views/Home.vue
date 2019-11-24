@@ -1,18 +1,14 @@
 <template>
 <div class="mt-3">
-  <div class="text-secondary text-center">
-    Welcome back 
-    <span class="font-weight-bold text-info">{{user}}</span>
-    </div>
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col-10 col-md-10 col-lg-8 col-xl-7">
-        <h4 class="display-4 text-primary mb-2">Meeting Log</h4>
+        <h4 class="display-4 text-primary mb-2">Curricula</h4>
         <p class="lead">
-          This simple app creates meetings, allows people to check in, and
-          picks random users to award giveaways. It's a good example of a
+          This app creates activities, allows users to view, select
+          and review activities they would like to participate in. It's a good example of a
           Single Page Application which includes connection to a database and
-          routing. It's a practical way to learn
+          routing through views.
           <a
             href="https://vuejs.org/"
           >Vue.js</a>
@@ -23,7 +19,7 @@
 
         <router-link class="btn btn-outline-primary mr-2" to="/register">Register</router-link>
         <router-link class="btn btn-outline-primary mr-2" to="/login">Log In</router-link>
-        <router-link class="btn btn-primary" to="/meetings">Activities</router-link>
+        <router-link class="btn btn-primary" to="/activities">Activities</router-link>
       </div>
     </div>
   </div>
@@ -32,22 +28,9 @@
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import db from "../db.js"
 export default {
   name: "home",
-  data: function() {
-    return {
-      user: null
-    }
-  },
-  mounted() {
-    db.collection("users")
-    .doc("Ymd5PfPONGcrwLP3Pkyo")
-    .get()
-    .then(snapshot => {
-      this.user = snapshot.data().name;
-    })
-  },
+  props: ["user"],
   components: {
     FontAwesomeIcon
   }
