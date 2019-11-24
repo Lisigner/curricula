@@ -2,8 +2,18 @@
 <div class="mt-3">
     <div class="row justify-content-center">
         <div class="text-secondary text-center">
-    Welcome 
-    <span class="font-weight-bold text-info">{{user}}</span>
+          <div 
+            v-if="user" 
+            class="text-center"
+            >
+            Welcome 
+            <span class="font-weight-bold text-info">{{user}}</span>, 
+            <a href="#" 
+            role="button" 
+            class="text-primary" 
+            @click="$emit('logout')"
+            >logout</a>
+          </div>
     </div>
       <add-appointment @add="addItem"/>
        <search-appointments

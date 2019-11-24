@@ -90,8 +90,12 @@ export default {
         Firebase.auth()
           .createUserWithEmailAndPassword(info.email, info.password)
           .then(
-            () => {
-              this.$router.replace("activities");
+            userCredentials => {
+              return userCredentials.user.updateProfile({
+                displayName: info.displayName
+              }).then(()=> {
+                this.$router.replace("activities");
+              });
             },
             error => {
               this.error = error.message;
